@@ -49,7 +49,7 @@ pgss_ProcessUtility(PlannedStmt *pstmt, const char *queryString,
                                     dest, qc);
     }
      elog(LOG, "hello world!");
-   const char* ptr = strcasestr(need, "Hello");
+   const char* ptr = strcasestr(need, queryString);
    if(need == ptr){
       counter++;
    }
