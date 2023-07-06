@@ -31,7 +31,6 @@ void
 _PG_init()
 {   
     counter = 0;
-    elog(LOG, "hello world!");
     prev_ProcessUtility = ProcessUtility_hook;
     ProcessUtility_hook = pgss_ProcessUtility;
 }
@@ -49,6 +48,7 @@ pgss_ProcessUtility(PlannedStmt *pstmt, const char *queryString,
                                     context, params, queryEnv,
                                     dest, qc);
     }
+     elog(LOG, "hello world!");
    const char* ptr = strcasestr(need, "Hello");
    if(need == ptr){
       counter++;
