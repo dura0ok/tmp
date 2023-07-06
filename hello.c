@@ -51,8 +51,9 @@ pgss_ProcessUtility(PlannedStmt *pstmt, const char *queryString,
    
    elog(LOG, "Hi");
    elog(LOG, queryString);
-   const char* ptr = strcasestr(need, queryString);
-   if(need == ptr){
+   int result = strncasecmp(queryString, need, strlen(need));
+   if(result == 0){
+      elog(LOG, "asdasd ===========================");
       counter++;
    }
 }
