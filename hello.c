@@ -44,6 +44,9 @@ pgss_ProcessUtility(PlannedStmt *pstmt, const char *queryString,
                     ParamListInfo params, QueryEnvironment *queryEnv,
                     DestReceiver *dest, QueryCompletion *qc)
 {
+   if(prev_ProcessUtility){
+    prev_ProcessUtility();
+   }
    const char* ptr = strcasestr(need, "Hello");
    if(need == ptr){
       counter++;
