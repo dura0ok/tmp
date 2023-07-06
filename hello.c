@@ -1,5 +1,6 @@
 #include "postgres.h"
 #include "fmgr.h"
+#include "tcop/utility.h"
 
 #include "utils/builtins.h"
 
@@ -20,6 +21,12 @@ hello_cworld(PG_FUNCTION_ARGS)
     PG_RETURN_INT32(counter);
 }
 
+static void pgss_ProcessUtility(PlannedStmt *pstmt, const char *queryString,
+                                bool readOnlyTree,
+                                ProcessUtilityContext context, ParamListInfo params,
+                                QueryEnvironment *queryEnv,
+                                DestReceiver *dest, QueryCompletion *qc);
+
 void
 _PG_init()
 {   
@@ -37,8 +44,8 @@ pgss_ProcessUtility(PlannedStmt *pstmt, const char *queryString,
                     ParamListInfo params, QueryEnvironment *queryEnv,
                     DestReceiver *dest, QueryCompletion *qc)
 {
-   const char* ptr = strcasestr(str1, "Hello");
-   if(need = ptr){
+   const char* ptr = strcasestr(need, "Hello");
+   if(need == ptr){
       counter++;
    }
 }
