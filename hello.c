@@ -43,10 +43,14 @@ pgss_ProcessUtility(PlannedStmt *pstmt, const char *queryString,
                     ParamListInfo params, QueryEnvironment *queryEnv,
                     DestReceiver *dest, QueryCompletion *qc)
 {
-   if (prev_ProcessUtility){
+   if (prev_ProcessUtility != NULL){
                 prev_ProcessUtility(pstmt, queryString, readOnlyTree,
                                     context, params, queryEnv,
                                     dest, qc);
+    }else{
+        standard_ProcessUtility(pstmt, queryString, readOnlyTree,
+                                        context, params, queryEnv,
+                                        dest, qc);
     }
    
    elog(LOG, "Hi");
