@@ -5,6 +5,7 @@ OBJS = hello.o
 EXTENSION = hello
 
 DATA = hello--1.0.sql
+REGRESS = hello
 
 ifdef USE_PGXS
 PG_CONFIG = pg_config

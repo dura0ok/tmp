@@ -1,20 +1,35 @@
+create extension hello;
+select hello_world();
   hello_world  
 ---------------
  Hello, world!
 (1 row)
+
+select hello_cworld();
  hello_cworld 
 --------------
             0
 (1 row)
+
+create table kek(t int);
+select hello_cworld();
  hello_cworld 
 --------------
             1
 (1 row)
+
+create table kek(t int);
+ERROR:  relation "kek" already exists
+select hello_cworld();
  hello_cworld 
 --------------
             1
 (1 row)
+
+drop table kek;
+select hello_cworld();
  hello_cworld 
 --------------
             1
 (1 row)
+
