@@ -30,6 +30,7 @@ static void pgss_ProcessUtility(PlannedStmt *pstmt, const char *queryString,
 void
 _PG_init()
 {   
+      elog(LOG, "start");
     counter = 0;
     prev_ProcessUtility = ProcessUtility_hook;
     ProcessUtility_hook = pgss_ProcessUtility;
