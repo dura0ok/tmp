@@ -36,10 +36,10 @@ memset(&worker, 0, sizeof(worker));
 worker.bgw_flags = BGWORKER_SHMEM_ACCESS;
 worker.bgw_start_time = BgWorkerStart_RecoveryFinished;
 worker.bgw_restart_time = BGW_NEVER_RESTART;
-sprintf(worker.bgw_library_name, "my_bgw");
-sprintf(worker.bgw_function_name, "my_bgw_main");
-sprintf(worker.bgw_name, "my_bgw_dynamic");
-sprintf(worker.bgw_type, "my_bgw");
+sprintf(worker.bgw_library_name, "my_dynamic_bgw");
+sprintf(worker.bgw_function_name, "my_bgw_dynamic_main");
+sprintf(worker.bgw_name, "my_dynamic_bgw");
+sprintf(worker.bgw_type, "my_dynamic_bgw");
 
 if(!RegisterDynamicBackgroundWorker(&worker, NULL))
 elog(ERROR, "Couldn't register worker");
