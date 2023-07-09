@@ -1,0 +1,5 @@
+# my_dynamic_bgw extension
+comment = 'my_dynamic_bgw extension'
+default_version = '1.0'
+module_pathname = '$libdir/my_dynamic_bgw'
+relocatable = true

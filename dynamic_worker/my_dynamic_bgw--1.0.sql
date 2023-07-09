@@ -1,0 +1,1 @@
+create function my_dynamic_bgw() returns void AS 'MODULE_PATHNAME', 'my_dynamic_bgw' LANGUAGE C;
