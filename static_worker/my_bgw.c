@@ -13,7 +13,7 @@ void _PG_init(void){
 	worker.bgw_flags = BGWORKER_SHMEM_ACCESS;
 	worker.bgw_start_time = BgWorkerStart_RecoveryFinished;
 	worker.bgw_restart_time = BGW_NEVER_RESTART;
-	sprintf(worker.bgw_library_name, "bgw1");
+	sprintf(worker.bgw_library_name, "my_bgw");
 
 	sprintf(worker.bgw_function_name, "bgw1_main");
 	sprintf(worker.bgw_name, "bgw1 worker");
