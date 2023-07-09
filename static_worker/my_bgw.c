@@ -3,7 +3,7 @@
 #include "fmgr.h"
 #include "postmaster/bgworker.h"
 
-PG_MODULE_MAGIC
+PG_MODULE_MAGIC;
 
 PGDLLEXPORT void bgw1_main(Datum main_arg);
 
