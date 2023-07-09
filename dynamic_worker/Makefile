@@ -16,4 +16,5 @@ top_builddir = ../..
 include $(top_builddir)/src/Makefile.global
 include $(top_srcdir)/contrib/contrib-global.mk
 endif
-create function my_dynamic_bgw() returns void AS 'MODULE_PATHNAME', 'my_dynamic_bgw' LANGUAGE C;
+
+
